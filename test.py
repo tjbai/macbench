@@ -21,8 +21,6 @@ def run(device, size):
         c = torch.matmul(a, b)
 
     torch.cuda.synchronize() if device == 'cuda' else torch.mps.synchronize() if device == 'mps' else None
-    end_time = time.time()
-    
     return time.time() - s
 
 def main():
